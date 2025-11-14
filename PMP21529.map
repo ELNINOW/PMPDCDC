@@ -1,0 +1,846 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.5                      
+******************************************************************************
+>> Linked Tue Sep 01 13:10:41 2020
+
+OUTPUT FILE NAME:   <PMP21529.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002cb4
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  VECS                  00000000   00000020  00000020  00000000  RWIX
+  PFLASH                00000020   00007f38  00003722  00004816  R  X
+  DEVICEID              00007f58   00000020  0000001f  00000001  R  X
+  FIXTFA                00007f78   00000004  00000000  00000004  R  X
+  FIXCONST              00007f7c   00000080  00000000  00000080  R  X
+  FLASHSUM              00007ffc   00000004  00000000  00000004  R  X
+  ROM                   0000a020   00000be0  00000000  00000be0  RWIX
+  SINE                  0000ac00   00000282  00000000  00000282  RWIX
+  EXP                   0000ae82   0000007a  00000000  0000007a  RWIX
+  DFLASH                00018800   00000800  000001d0  00000630  R  X
+  TESTER                00019000   0000001c  00000000  0000001c  RW  
+  RAM                   0001901c   00000e50  00000220  00000c30  RW  
+  STACKS                00019e6c   00000190  00000000  00000190  RW  
+  ROMLOCK               00019ffc   00000004  00000000  00000004  RW  
+  LOOP_MUX              00020000   00000078  00000078  00000000  RWIX
+  FAULT_MUX             00030000   00000080  00000080  00000000  RWIX
+  ADC                   00040000   00000098  00000098  00000000  RWIX
+  DPWM3                 00050000   0000008c  0000008c  00000000  RWIX
+  FILTER2               00060000   00000064  00000064  00000000  RWIX
+  DPWM2                 00070000   0000008c  0000008c  00000000  RWIX
+  FE_CTRL2              00080000   00000044  00000044  00000000  RWIX
+  FILTER1               00090000   00000064  00000064  00000000  RWIX
+  DPWM1                 000a0000   0000008c  0000008c  00000000  RWIX
+  FE_CTRL1              000b0000   00000044  00000044  00000000  RWIX
+  FILTER0               000c0000   00000064  00000064  00000000  RWIX
+  DPWM0                 000d0000   0000008c  0000008c  00000000  RWIX
+  FE_CTRL0              000e0000   00000044  00000044  00000000  RWIX
+  UART0                 fff7ec00   00000038  00000038  00000000  RWIX
+  UART1                 fff7ed00   00000038  00000038  00000000  RWIX
+  MISC_ANALOG           fff7f000   00000048  00000048  00000000  RWIX
+  PMBUS                 fff7f600   00000024  00000024  00000000  RWIX
+  GIO                   fff7fa00   00000040  00000040  00000000  RWIX
+  TIMER                 fff7fd00   0000009c  0000009c  00000000  RWIX
+  MMC                   fffffd00   0000003c  0000003c  00000000  RWIX
+  DEC                   fffffe00   0000009c  0000009c  00000000  RWIX
+  CIM                   ffffff20   00000018  00000018  00000000  RWIX
+  SYS                   ffffffd0   00000030  00000030  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    00000020    00003598     
+                  00000020    00000da0     standard_interrupt.obj (.text:retain)
+                  00000dc0    000003e0     pmbus.obj (.text)
+                  000011a0    000003c0     interrupts.obj (.text:retain)
+                  00001560    00000394     pmbus_coefficients.obj (.text)
+                  000018f4    00000364     pmbus_manuf_specific_commands.obj (.text)
+                  00001c58    00000328     standard_interrupt.obj (.text)
+                  00001f80    00000294     pmbus_handler.obj (.text)
+                  00002214    0000028c     rtsv4_T_be_tiarm9.lib : ull_div32.obj (.text)
+                  000024a0    0000020c     init_bat_charge_loop.obj (.text)
+                  000026ac    0000019c     software_interrupt_wrapper.obj (.text)
+                  00002848    00000198     flash.obj (.text)
+                  000029e0    00000192     rtsv4_T_be_tiarm9.lib : fd_add16.obj (.text)
+                  00002b72    00000002     --HOLE-- [fill = 0]
+                  00002b74    00000190     main.obj (.text)
+                  00002d04    00000138     init_dpwm.obj (.text)
+                  00002e3c    000000f8     init_bus_backup_loop.obj (.text)
+                  00002f34    000000f4     init_miscellaneous.obj (.text)
+                  00003028    000000e0     pmbus_manuf_info_commands.obj (.text)
+                  00003108    000000d8     load.obj (.text)
+                  000031e0    000000b4     init_adc12.obj (.text)
+                  00003294    000000b4     init_protection.obj (.text)
+                  00003348    0000009a     rtsv4_T_be_tiarm9.lib : memcpy16.obj (.text)
+                  000033e2    00000002     --HOLE-- [fill = 0]
+                  000033e4    00000044     zero_out_integrity_word.obj (.text)
+                  00003428    00000040     rtsv4_T_be_tiarm9.lib : fd_tou16.obj (.text)
+                  00003468    0000002a     pmbus_tools.obj (.text)
+                  00003492    00000002     --HOLE-- [fill = 0]
+                  00003494    00000024     clear_program_flash.obj (.text)
+                  000034b8    00000022     rtsv4_T_be_tiarm9.lib : u_tofd16.obj (.text)
+                  000034da    00000002     --HOLE-- [fill = 0]
+                  000034dc    00000016                           : ull_div16.obj (.text)
+                  000034f2    00000002     --HOLE-- [fill = 0]
+                  000034f4    00000014     device_id.obj (.text)
+                  00003508    00000010     software_interrupt_wrapper.obj (.tramp._enable_fast_interrupt.1)
+                  00003518    00000010     software_interrupt_wrapper.obj (.tramp._enable_interrupt.1)
+                  00003528    00000010     software_interrupt_wrapper.obj (.tramp._write_reqmask.1)
+                  00003538    00000010     software_interrupt_wrapper.obj (.tramp._write_firqpr.1)
+                  00003548    00000010     software_interrupt_wrapper.obj (.tramp._disable_interrupt.1)
+                  00003558    00000010     software_interrupt_wrapper.obj (.tramp._disable_fast_interrupt.1)
+                  00003568    00000010     standard_interrupt.obj (.tramp._poll_adc.1)
+                  00003578    00000010     software_interrupt_wrapper.obj (.tramp._erase_data_flash_segment.1)
+                  00003588    00000010     software_interrupt_wrapper.obj (.tramp._erase_dflash_segment_no_delay.1)
+                  00003598    00000010     software_interrupt_wrapper.obj (.tramp._write_data_flash_block.1)
+                  000035a8    00000010     software_interrupt_wrapper.obj (.tramp._clear_integrity_word.1)
+
+.const     0    000035c0    0000018a     
+                  000035c0    000000bc     pmbus_manuf_specific_commands.obj (.const:.string)
+                  0000367c    0000005a     pmbus_manuf_info_commands.obj (.const:.string)
+                  000036d6    00000002     --HOLE-- [fill = 0]
+                  000036d8    0000004c     pmbus_manuf_specific_commands.obj (.const:_parm_mem_start)
+                  00003724    00000026     pmbus_manuf_specific_commands.obj (.const:_parm_mem_length)
+
+.cinit     0    00000020    00000000     UNINITIALIZED
+
+FixedDeviceID 
+*          0    00007f58    0000001f     
+                  00007f58    0000001f     device_id.obj (FixedDeviceID)
+
+.vectors   0    00000000    00000020     
+                  00000000    00000020     load.obj (.vectors)
+
+.CONFIG    0    00018800    000000e8     
+                  00018800    000000e8     constants.obj (.CONFIG)
+
+.CONFIG_B 
+*          0    00018900    000000e8     UNINITIALIZED
+                  00018900    000000e8     constants.obj (.CONFIG_B)
+
+.bss       0    0001901c    00000220     UNINITIALIZED
+                  0001901c    000000d0     main.obj (.bss)
+                  000190ec    00000040     main.obj (.bss:_filter0_pmbus_regs)
+                  0001912c    00000040     main.obj (.bss:_filter1_pmbus_regs)
+                  0001916c    0000002c     main.obj (.bss:_pmbus_dcdc_config_nonpaged)
+                  00019198    0000002c     main.obj (.bss:_pmbus_dcdc_config_nonpaged_translated)
+                  000191c4    00000028     main.obj (.bss:_pmbus_buffer)
+                  000191ec    00000028     main.obj (.bss:_pmbus_dcdc_config)
+                  00019214    00000028     main.obj (.bss:_pmbus_dcdc_config_translated)
+
+.stack     0    00019e6c    00000000     UNINITIALIZED
+
+LoopMuxRegsFile 
+*          0    00020000    00000078     UNINITIALIZED
+                  00020000    00000078     cyclone_global_variables_defs.obj (LoopMuxRegsFile)
+
+FaultMuxRegsFile 
+*          0    00030000    00000080     UNINITIALIZED
+                  00030000    00000080     cyclone_global_variables_defs.obj (FaultMuxRegsFile)
+
+AdcRegsFile 
+*          0    00040000    00000098     UNINITIALIZED
+                  00040000    00000098     cyclone_global_variables_defs.obj (AdcRegsFile)
+
+Dpwm3RegsFile 
+*          0    00050000    0000008c     UNINITIALIZED
+                  00050000    0000008c     cyclone_global_variables_defs.obj (Dpwm3RegsFile)
+
+Filter2RegsFile 
+*          0    00060000    00000064     UNINITIALIZED
+                  00060000    00000064     cyclone_global_variables_defs.obj (Filter2RegsFile)
+
+Dpwm2RegsFile 
+*          0    00070000    0000008c     UNINITIALIZED
+                  00070000    0000008c     cyclone_global_variables_defs.obj (Dpwm2RegsFile)
+
+FeCtrl2RegsFile 
+*          0    00080000    00000044     UNINITIALIZED
+                  00080000    00000044     cyclone_global_variables_defs.obj (FeCtrl2RegsFile)
+
+Filter1RegsFile 
+*          0    00090000    00000064     UNINITIALIZED
+                  00090000    00000064     cyclone_global_variables_defs.obj (Filter1RegsFile)
+
+Dpwm1RegsFile 
+*          0    000a0000    0000008c     UNINITIALIZED
+                  000a0000    0000008c     cyclone_global_variables_defs.obj (Dpwm1RegsFile)
+
+FeCtrl1RegsFile 
+*          0    000b0000    00000044     UNINITIALIZED
+                  000b0000    00000044     cyclone_global_variables_defs.obj (FeCtrl1RegsFile)
+
+Filter0RegsFile 
+*          0    000c0000    00000064     UNINITIALIZED
+                  000c0000    00000064     cyclone_global_variables_defs.obj (Filter0RegsFile)
+
+Dpwm0RegsFile 
+*          0    000d0000    0000008c     UNINITIALIZED
+                  000d0000    0000008c     cyclone_global_variables_defs.obj (Dpwm0RegsFile)
+
+FeCtrl0RegsFile 
+*          0    000e0000    00000044     UNINITIALIZED
+                  000e0000    00000044     cyclone_global_variables_defs.obj (FeCtrl0RegsFile)
+
+Uart0RegsFile 
+*          0    fff7ec00    00000038     UNINITIALIZED
+                  fff7ec00    00000038     cyclone_global_variables_defs.obj (Uart0RegsFile)
+
+Uart1RegsFile 
+*          0    fff7ed00    00000038     UNINITIALIZED
+                  fff7ed00    00000038     cyclone_global_variables_defs.obj (Uart1RegsFile)
+
+MiscAnalogRegsFile 
+*          0    fff7f000    00000048     UNINITIALIZED
+                  fff7f000    00000048     cyclone_global_variables_defs.obj (MiscAnalogRegsFile)
+
+PMBusRegsFile 
+*          0    fff7f600    00000024     UNINITIALIZED
+                  fff7f600    00000024     cyclone_global_variables_defs.obj (PMBusRegsFile)
+
+GioRegsFile 
+*          0    fff7fa00    00000040     UNINITIALIZED
+                  fff7fa00    00000040     cyclone_global_variables_defs.obj (GioRegsFile)
+
+TimerRegsFile 
+*          0    fff7fd00    0000009c     UNINITIALIZED
+                  fff7fd00    0000009c     cyclone_global_variables_defs.obj (TimerRegsFile)
+
+MmcRegsFile 
+*          0    fffffd00    0000003c     UNINITIALIZED
+                  fffffd00    0000003c     cyclone_global_variables_defs.obj (MmcRegsFile)
+
+DecRegsFile 
+*          0    fffffe00    0000009c     UNINITIALIZED
+                  fffffe00    0000009c     cyclone_global_variables_defs.obj (DecRegsFile)
+
+CimRegsFile 
+*          0    ffffff20    00000018     UNINITIALIZED
+                  ffffff20    00000018     cyclone_global_variables_defs.obj (CimRegsFile)
+
+SysRegsFile 
+*          0    ffffffd0    00000030     UNINITIALIZED
+                  ffffffd0    00000030     cyclone_global_variables_defs.obj (SysRegsFile)
+
+VENEERS
+
+callee name               veneer name
+   callee addr  veneer addr  call addr  call info
+--------------  -----------  ---------  ----------------
+_enable_fast_interrupt    $Ven$TA$L$PI$$_enable_fast_interrupt
+   000027c8     00003508     00002f62   init_miscellaneous.obj (.text)
+_enable_interrupt         $Ven$TA$L$PI$$_enable_interrupt
+   000027a8     00003518     00002f5e   init_miscellaneous.obj (.text)
+_write_reqmask            $Ven$TA$L$PI$$_write_reqmask
+   000026ac     00003528     00002f5a   init_miscellaneous.obj (.text)
+_write_firqpr             $Ven$TA$L$PI$$_write_firqpr
+   000026c8     00003538     00002f54   init_miscellaneous.obj (.text)
+_disable_interrupt        $Ven$TA$L$PI$$_disable_interrupt
+   000027e8     00003548     00002f4c   init_miscellaneous.obj (.text)
+_disable_fast_interrupt   $Ven$TA$L$PI$$_disable_fast_interrupt
+   00002808     00003558     00002f48   init_miscellaneous.obj (.text)
+_poll_adc                 $Ven$TA$L$PI$$_poll_adc
+   00001c58     00003568     00002b92   main.obj (.text)
+                             00002bc6   main.obj (.text)
+                             00002cac   main.obj (.text)
+                             00002fcc   init_miscellaneous.obj (.text)
+_erase_data_flash_segment  $Ven$TA$L$PI$$_erase_data_flash_segment
+   0000278c     00003578     000029a4   flash.obj (.text)
+_erase_dflash_segment_no_delay  $Ven$TA$L$PI$$_erase_dflash_segment_no_delay
+   00002770     00003588     000028d0   flash.obj (.text)
+                             0000298a   flash.obj (.text)
+_write_data_flash_block   $Ven$TA$L$PI$$_write_data_flash_block
+   000026fc     00003598     00002882   flash.obj (.text)
+_clear_integrity_word     $Ven$TA$L$PI$$_clear_integrity_word
+   00002828     000035a8     0000195a   pmbus_manuf_specific_commands.obj (.text)
+
+[11 trampolines]
+[15 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                   
+-------   ----                                   
+0001901c  .bss                                   
+00000020  .text                                  
+00003348  C$MEMCPY                               
+000029ea  FD$ADD                                 
+000029e0  FD$SUB                                 
+00003428  FD$TOU                                 
+000034b8  U$TOFD                                 
+000034dc  ULL$DIV                                
+000034dc  ULL$MOD                                
+00002214  ULL_DIV                                
+00002214  ULL_MOD                                
+00040000  _AdcRegs                               
+ffffff20  _CimRegs                               
+fffffe00  _DecRegs                               
+000d0000  _Dpwm0Regs                             
+000a0000  _Dpwm1Regs                             
+00070000  _Dpwm2Regs                             
+00050000  _Dpwm3Regs                             
+00030000  _FaultMuxRegs                          
+000e0000  _FeCtrl0Regs                           
+000b0000  _FeCtrl1Regs                           
+00080000  _FeCtrl2Regs                           
+000c0000  _Filter0Regs                           
+00090000  _Filter1Regs                           
+00060000  _Filter2Regs                           
+fff7fa00  _GioRegs                               
+00020000  _LoopMuxRegs                           
+fff7f000  _MiscAnalogRegs                        
+fffffd00  _MmcRegs                               
+fff7f600  _PMBusRegs                             
+00019fec  _StackABORT_                           
+00019f94  _StackFIQ_                             
+00019fe8  _StackIRQ_                             
+00019ffc  _StackSUPER_                           
+00019ff0  _StackUND_                             
+00019f24  _StackUSER_                            
+ffffffd0  _SysRegs                               
+fff7fd00  _TimerRegs                             
+fff7ec00  _Uart0Regs                             
+fff7ed00  _Uart1Regs                             
+ffffffff  ___binit__                             
+0001901c  ___bss__                               
+ffffffff  ___c_args__                            
+ffffffff  ___cinit__                             
+0001923c  ___end__                               
+000035b8  ___etext__                             
+ffffffff  ___pinit__                             
+00000020  ___text__                              
+00001430  _abort_data_fetch_exception            
+0000142c  _abort_prefetch_exception              
+0001901c  _adc_values                            
+0001902c  _adc_values_avg                        
+000190bc  _backup_duty                           
+000190d4  _boost_duty                            
+000190b4  _boost_hysteresis                      
+000190cc  _buck_duty                             
+000190b0  _buck_hysteresis                       
+000190d0  _buckboost_duty                        
+00002cb4  _c_int00                               
+000028dc  _calculate_dflash_checksum             
+000190ac  _charge_state                          
+00002828  _clear_integrity_word                  
+00003494  _clear_program_flash                   
+00003600  _cmd_dcdc_nonpaged                     
+000035e0  _cmd_dcdc_paged                        
+000035c0  _cmd_pfc                               
+00001560  _copy_coefficients_to_filter           
+000016b8  _copy_coefficients_to_ram              
+00019060  _current_error                         
+0001905c  _current_share_kp                      
+000190a4  _debug1                                
+000190a8  _debug2                                
+0000362c  _debug_0_text                          
+00003634  _debug_1_text                          
+0000363c  _debug_2_text                          
+00003644  _debug_3_text                          
+0000364c  _debug_4_text                          
+00003654  _debug_5_text                          
+0000365c  _debug_6_text                          
+00003664  _debug_7_text                          
+0001908c  _debug_buffer                          
+00002fb8  _delay                                 
+00007f58  _device_id_string                      
+00002808  _disable_fast_interrupt                
+000027e8  _disable_interrupt                     
+00019068  _eadc_dac_max                          
+0001906c  _eadc_dac_min                          
+00019064  _eadc_dac_target                       
+000027c8  _enable_fast_interrupt                 
+000027a8  _enable_interrupt                      
+0000278c  _erase_data_flash_segment              
+00002770  _erase_dflash_segment_no_delay         
+00002994  _erase_one_section                     
+00002750  _erase_pflash                          
+00019044  _erase_segment_counter                 
+00019045  _erase_segment_number                  
+00002964  _erase_task                            
+00001434  _fast_interrupt                        
+00019040  _fault_type                            
+000190ec  _filter0_pmbus_regs                    
+00018800  _filter0_pmbus_regs_constants          
+00018900  _filter0_pmbus_regs_constants_b        
+0001912c  _filter1_pmbus_regs                    
+00018840  _filter1_pmbus_regs_constants          
+00018940  _filter1_pmbus_regs_constants_b        
+00019046  _flash_write_status                    
+0001909f  _gui_constant_pointer                  
+00019054  _hiccup_counter_oc                     
+00019058  _hiccup_counter_ov                     
+000190d8  _ibat_adc_offset                       
+00019074  _iloop_filter                          
+000031e0  _init_adc12                            
+00002660  _init_bat_current_loop                 
+000025ec  _init_battery_loop_mux                 
+00002f00  _init_bus_voltage_loop                 
+00002d04  _init_dpwm0                            
+00002d94  _init_dpwm1                            
+00002e1c  _init_dpwms                            
+00002560  _init_filter0                          
+000024d0  _init_filter1                          
+00002e74  _init_filter2                          
+000024b8  _init_front_end0                       
+000024a0  _init_front_end1                       
+00002e64  _init_front_end2                       
+00002fa8  _init_gpio                             
+00002f80  _init_miscellaneous                    
+00002f6c  _init_pmbus                            
+00003294  _init_protection                       
+00002f34  _init_timer_interrupt                  
+00002e3c  _init_voltage_loop_mux                 
+00019048  _interrupt_counter1                    
+0001904c  _interrupt_counter2                    
+00019050  _interrupt_counter3                    
+00003468  _linear11_translation                  
+000028f4  _look_for_interrupted_dflash_erase     
+00002b74  _main                                  
+000036ac  _mfr_date                              
+000036c8  _mfr_ic_device                         
+000036d4  _mfr_ic_device_rev                     
+00003690  _mfr_id                                
+000036b4  _mfr_location                          
+00003694  _mfr_model                             
+000036a8  _mfr_revision                          
+000036c0  _mfr_serial                            
+00003674  _na_text                               
+00019094  _page                                  
+00019080  _parm_count                            
+0001907c  _parm_index                            
+00003724  _parm_mem_length                       
+000036d8  _parm_mem_start                        
+0001907e  _parm_offset                           
+00019081  _parm_size                             
+000191c4  _pmbus_buffer                          
+00019084  _pmbus_buffer_position                 
+000188e4  _pmbus_checksum                        
+000189e4  _pmbus_checksum_b                      
+0000187c  _pmbus_data_translation                
+000190dc  _pmbus_dcdc_cal                        
+00018880  _pmbus_dcdc_cal_constants              
+00018980  _pmbus_dcdc_cal_constants_b            
+000190e8  _pmbus_dcdc_cal_nonpaged               
+0001888c  _pmbus_dcdc_cal_nonpaged_constants     
+0001898c  _pmbus_dcdc_cal_nonpaged_constants_b   
+000191ec  _pmbus_dcdc_config                     
+00018890  _pmbus_dcdc_config_constants           
+00018990  _pmbus_dcdc_config_constants_b         
+0001916c  _pmbus_dcdc_config_nonpaged            
+000188b8  _pmbus_dcdc_config_nonpaged_constants  
+000189b8  _pmbus_dcdc_config_nonpaged_constants_b
+00019198  _pmbus_dcdc_config_nonpaged_translated 
+00019214  _pmbus_dcdc_config_translated          
+000021bc  _pmbus_handler                         
+000020ec  _pmbus_idle_handler                    
+000030cc  _pmbus_mfr_date_handler                
+000030bc  _pmbus_mfr_ic_device_handler           
+000030ac  _pmbus_mfr_ic_device_rev_handler       
+0000309c  _pmbus_mfr_id_handler                  
+0000308c  _pmbus_mfr_location_handler            
+0000307c  _pmbus_mfr_model_handler               
+0000306c  _pmbus_mfr_revision_handler            
+0000305c  _pmbus_mfr_serial_handler              
+00019083  _pmbus_number_of_bytes                 
+0000203c  _pmbus_read_block_handler              
+00001bdc  _pmbus_read_cmd_dcdc_nonpaged          
+00001bb4  _pmbus_read_cmd_dcdc_paged             
+00001b8c  _pmbus_read_cmd_pfc                    
+00001b88  _pmbus_read_cpcc_config                
+00000fa4  _pmbus_read_deadband_config            
+00001b60  _pmbus_read_debug_buffer               
+000034f4  _pmbus_read_device_id                  
+00001188  _pmbus_read_frequency                  
+00000f90  _pmbus_read_iin_oc_fault_limit         
+00000fa0  _pmbus_read_iout                       
+00000f80  _pmbus_read_iout_oc_fault_limit        
+00001b5c  _pmbus_read_light_load_config          
+00000fb8  _pmbus_read_message                    
+00000f70  _pmbus_read_one_byte_handler           
+00001b30  _pmbus_read_parm_info                  
+00001ac4  _pmbus_read_parm_value                 
+00001ac0  _pmbus_read_pfc_os_enable              
+00001abc  _pmbus_read_pfc_zvs_enable             
+0000304c  _pmbus_read_setup_id                   
+00000f60  _pmbus_read_temp_ot_fault_limit        
+00000f5c  _pmbus_read_temperature1               
+00000f24  _pmbus_read_two_byte_handler           
+00001aa8  _pmbus_read_user_ram_00                
+00000f58  _pmbus_read_vout                       
+00000f48  _pmbus_read_vout_cmd                   
+00000f38  _pmbus_read_vout_ov_fault_limit        
+00002014  _pmbus_read_wait_for_eom_handler       
+00019082  _pmbus_state                           
+00019097  _pmbus_status_cml                      
+00019098  _pmbus_status_fans_1_2                 
+00019099  _pmbus_status_fans_3_4                 
+00019086  _pmbus_status_half_word_0_value        
+00019088  _pmbus_status_half_word_0_value_ored   
+00019096  _pmbus_status_input                    
+00019095  _pmbus_status_temperature              
+0001909a  _pmbus_status_word                     
+00001f80  _pmbus_write_block_handler             
+00000e10  _pmbus_write_clear_faults              
+00001aa4  _pmbus_write_cpcc_config               
+00000e60  _pmbus_write_deadband_config           
+00001a98  _pmbus_write_gui_constant              
+00000e5c  _pmbus_write_iin_oc_fault_limit        
+00000e18  _pmbus_write_iout_oc_fault_limit       
+00001a94  _pmbus_write_light_load_config         
+00000e64  _pmbus_write_message                   
+00001a44  _pmbus_write_parm_info                 
+00001970  _pmbus_write_parm_value                
+0000196c  _pmbus_write_pfc_os_enable             
+00001968  _pmbus_write_pfc_zvs_enable            
+00001868  _pmbus_write_restore_default_all       
+00001958  _pmbus_write_rom_mode                  
+00001708  _pmbus_write_store_default_all         
+00000e0c  _pmbus_write_temp_ot_fault_limit       
+0000194c  _pmbus_write_user_ram_00               
+00000e08  _pmbus_write_vout_cmd                  
+00000dcc  _pmbus_write_vout_ov_fault_limit       
+00001c58  _poll_adc                              
+00019078  _pout                                  
+00001d04  _preset_filter0                        
+00001d54  _preset_filter1                        
+000190b8  _pulse_state                           
+000016b4  _restore_configuration                 
+00001618  _restore_default_all                   
+000015e4  _restore_filter0                       
+000015b0  _restore_filter1                       
+0001909c  _second_pmbus_status_word              
+00003028  _send_string                           
+00002730  _set_supervisor_mode                   
+00002710  _set_user_mode                         
+0000367c  _setup_id                              
+0001909e  _setup_id_length                       
+00001cdc  _shut_down                             
+00000dc0  _sign_extend                           
+000011a4  _software_interrupt                    
+00000020  _standard_interrupt                    
+00002890  _start_erase_task                      
+00003620  _status_bit_mask                       
+000190a1  _status_cml                            
+0001903c  _supply_state                          
+000011a0  _undefined_instruction_exception       
+00002880  _update_data_flash                     
+000190a0  _user_ram_00                           
+000190c4  _vbus_backup_voltage                   
+000190c0  _vbus_filtered                         
+0000366c  _vbus_full_range_text                  
+000190c8  _vbus_norminal                         
+00019070  _vloop_filter                          
+000018f4  _watchdog_reset                        
+000026fc  _write_data_flash_block                
+000026e4  _write_data_flash_word                 
+000026c8  _write_firqpr                          
+00002848  _write_program_flash_word              
+000026ac  _write_reqmask                         
+00003678  _yes_text                              
+000033e4  _zero_out_integrity_word               
+ffffffff  binit                                  
+ffffffff  cinit                                  
+0001923c  end                                    
+000035b8  etext                                  
+ffffffff  pinit                                  
+ffffa4dc  rom_main                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                   
+-------   ----                                   
+00000020  .text                                  
+00000020  ___text__                              
+00000020  _standard_interrupt                    
+00000dc0  _sign_extend                           
+00000dcc  _pmbus_write_vout_ov_fault_limit       
+00000e08  _pmbus_write_vout_cmd                  
+00000e0c  _pmbus_write_temp_ot_fault_limit       
+00000e10  _pmbus_write_clear_faults              
+00000e18  _pmbus_write_iout_oc_fault_limit       
+00000e5c  _pmbus_write_iin_oc_fault_limit        
+00000e60  _pmbus_write_deadband_config           
+00000e64  _pmbus_write_message                   
+00000f24  _pmbus_read_two_byte_handler           
+00000f38  _pmbus_read_vout_ov_fault_limit        
+00000f48  _pmbus_read_vout_cmd                   
+00000f58  _pmbus_read_vout                       
+00000f5c  _pmbus_read_temperature1               
+00000f60  _pmbus_read_temp_ot_fault_limit        
+00000f70  _pmbus_read_one_byte_handler           
+00000f80  _pmbus_read_iout_oc_fault_limit        
+00000f90  _pmbus_read_iin_oc_fault_limit         
+00000fa0  _pmbus_read_iout                       
+00000fa4  _pmbus_read_deadband_config            
+00000fb8  _pmbus_read_message                    
+00001188  _pmbus_read_frequency                  
+000011a0  _undefined_instruction_exception       
+000011a4  _software_interrupt                    
+0000142c  _abort_prefetch_exception              
+00001430  _abort_data_fetch_exception            
+00001434  _fast_interrupt                        
+00001560  _copy_coefficients_to_filter           
+000015b0  _restore_filter1                       
+000015e4  _restore_filter0                       
+00001618  _restore_default_all                   
+000016b4  _restore_configuration                 
+000016b8  _copy_coefficients_to_ram              
+00001708  _pmbus_write_store_default_all         
+00001868  _pmbus_write_restore_default_all       
+0000187c  _pmbus_data_translation                
+000018f4  _watchdog_reset                        
+0000194c  _pmbus_write_user_ram_00               
+00001958  _pmbus_write_rom_mode                  
+00001968  _pmbus_write_pfc_zvs_enable            
+0000196c  _pmbus_write_pfc_os_enable             
+00001970  _pmbus_write_parm_value                
+00001a44  _pmbus_write_parm_info                 
+00001a94  _pmbus_write_light_load_config         
+00001a98  _pmbus_write_gui_constant              
+00001aa4  _pmbus_write_cpcc_config               
+00001aa8  _pmbus_read_user_ram_00                
+00001abc  _pmbus_read_pfc_zvs_enable             
+00001ac0  _pmbus_read_pfc_os_enable              
+00001ac4  _pmbus_read_parm_value                 
+00001b30  _pmbus_read_parm_info                  
+00001b5c  _pmbus_read_light_load_config          
+00001b60  _pmbus_read_debug_buffer               
+00001b88  _pmbus_read_cpcc_config                
+00001b8c  _pmbus_read_cmd_pfc                    
+00001bb4  _pmbus_read_cmd_dcdc_paged             
+00001bdc  _pmbus_read_cmd_dcdc_nonpaged          
+00001c58  _poll_adc                              
+00001cdc  _shut_down                             
+00001d04  _preset_filter0                        
+00001d54  _preset_filter1                        
+00001f80  _pmbus_write_block_handler             
+00002014  _pmbus_read_wait_for_eom_handler       
+0000203c  _pmbus_read_block_handler              
+000020ec  _pmbus_idle_handler                    
+000021bc  _pmbus_handler                         
+00002214  ULL_DIV                                
+00002214  ULL_MOD                                
+000024a0  _init_front_end1                       
+000024b8  _init_front_end0                       
+000024d0  _init_filter1                          
+00002560  _init_filter0                          
+000025ec  _init_battery_loop_mux                 
+00002660  _init_bat_current_loop                 
+000026ac  _write_reqmask                         
+000026c8  _write_firqpr                          
+000026e4  _write_data_flash_word                 
+000026fc  _write_data_flash_block                
+00002710  _set_user_mode                         
+00002730  _set_supervisor_mode                   
+00002750  _erase_pflash                          
+00002770  _erase_dflash_segment_no_delay         
+0000278c  _erase_data_flash_segment              
+000027a8  _enable_interrupt                      
+000027c8  _enable_fast_interrupt                 
+000027e8  _disable_interrupt                     
+00002808  _disable_fast_interrupt                
+00002828  _clear_integrity_word                  
+00002848  _write_program_flash_word              
+00002880  _update_data_flash                     
+00002890  _start_erase_task                      
+000028dc  _calculate_dflash_checksum             
+000028f4  _look_for_interrupted_dflash_erase     
+00002964  _erase_task                            
+00002994  _erase_one_section                     
+000029e0  FD$SUB                                 
+000029ea  FD$ADD                                 
+00002b74  _main                                  
+00002cb4  _c_int00                               
+00002d04  _init_dpwm0                            
+00002d94  _init_dpwm1                            
+00002e1c  _init_dpwms                            
+00002e3c  _init_voltage_loop_mux                 
+00002e64  _init_front_end2                       
+00002e74  _init_filter2                          
+00002f00  _init_bus_voltage_loop                 
+00002f34  _init_timer_interrupt                  
+00002f6c  _init_pmbus                            
+00002f80  _init_miscellaneous                    
+00002fa8  _init_gpio                             
+00002fb8  _delay                                 
+00003028  _send_string                           
+0000304c  _pmbus_read_setup_id                   
+0000305c  _pmbus_mfr_serial_handler              
+0000306c  _pmbus_mfr_revision_handler            
+0000307c  _pmbus_mfr_model_handler               
+0000308c  _pmbus_mfr_location_handler            
+0000309c  _pmbus_mfr_id_handler                  
+000030ac  _pmbus_mfr_ic_device_rev_handler       
+000030bc  _pmbus_mfr_ic_device_handler           
+000030cc  _pmbus_mfr_date_handler                
+000031e0  _init_adc12                            
+00003294  _init_protection                       
+00003348  C$MEMCPY                               
+000033e4  _zero_out_integrity_word               
+00003428  FD$TOU                                 
+00003468  _linear11_translation                  
+00003494  _clear_program_flash                   
+000034b8  U$TOFD                                 
+000034dc  ULL$DIV                                
+000034dc  ULL$MOD                                
+000034f4  _pmbus_read_device_id                  
+000035b8  ___etext__                             
+000035b8  etext                                  
+000035c0  _cmd_pfc                               
+000035e0  _cmd_dcdc_paged                        
+00003600  _cmd_dcdc_nonpaged                     
+00003620  _status_bit_mask                       
+0000362c  _debug_0_text                          
+00003634  _debug_1_text                          
+0000363c  _debug_2_text                          
+00003644  _debug_3_text                          
+0000364c  _debug_4_text                          
+00003654  _debug_5_text                          
+0000365c  _debug_6_text                          
+00003664  _debug_7_text                          
+0000366c  _vbus_full_range_text                  
+00003674  _na_text                               
+00003678  _yes_text                              
+0000367c  _setup_id                              
+00003690  _mfr_id                                
+00003694  _mfr_model                             
+000036a8  _mfr_revision                          
+000036ac  _mfr_date                              
+000036b4  _mfr_location                          
+000036c0  _mfr_serial                            
+000036c8  _mfr_ic_device                         
+000036d4  _mfr_ic_device_rev                     
+000036d8  _parm_mem_start                        
+00003724  _parm_mem_length                       
+00007f58  _device_id_string                      
+00018800  _filter0_pmbus_regs_constants          
+00018840  _filter1_pmbus_regs_constants          
+00018880  _pmbus_dcdc_cal_constants              
+0001888c  _pmbus_dcdc_cal_nonpaged_constants     
+00018890  _pmbus_dcdc_config_constants           
+000188b8  _pmbus_dcdc_config_nonpaged_constants  
+000188e4  _pmbus_checksum                        
+00018900  _filter0_pmbus_regs_constants_b        
+00018940  _filter1_pmbus_regs_constants_b        
+00018980  _pmbus_dcdc_cal_constants_b            
+0001898c  _pmbus_dcdc_cal_nonpaged_constants_b   
+00018990  _pmbus_dcdc_config_constants_b         
+000189b8  _pmbus_dcdc_config_nonpaged_constants_b
+000189e4  _pmbus_checksum_b                      
+0001901c  .bss                                   
+0001901c  ___bss__                               
+0001901c  _adc_values                            
+0001902c  _adc_values_avg                        
+0001903c  _supply_state                          
+00019040  _fault_type                            
+00019044  _erase_segment_counter                 
+00019045  _erase_segment_number                  
+00019046  _flash_write_status                    
+00019048  _interrupt_counter1                    
+0001904c  _interrupt_counter2                    
+00019050  _interrupt_counter3                    
+00019054  _hiccup_counter_oc                     
+00019058  _hiccup_counter_ov                     
+0001905c  _current_share_kp                      
+00019060  _current_error                         
+00019064  _eadc_dac_target                       
+00019068  _eadc_dac_max                          
+0001906c  _eadc_dac_min                          
+00019070  _vloop_filter                          
+00019074  _iloop_filter                          
+00019078  _pout                                  
+0001907c  _parm_index                            
+0001907e  _parm_offset                           
+00019080  _parm_count                            
+00019081  _parm_size                             
+00019082  _pmbus_state                           
+00019083  _pmbus_number_of_bytes                 
+00019084  _pmbus_buffer_position                 
+00019086  _pmbus_status_half_word_0_value        
+00019088  _pmbus_status_half_word_0_value_ored   
+0001908c  _debug_buffer                          
+00019094  _page                                  
+00019095  _pmbus_status_temperature              
+00019096  _pmbus_status_input                    
+00019097  _pmbus_status_cml                      
+00019098  _pmbus_status_fans_1_2                 
+00019099  _pmbus_status_fans_3_4                 
+0001909a  _pmbus_status_word                     
+0001909c  _second_pmbus_status_word              
+0001909e  _setup_id_length                       
+0001909f  _gui_constant_pointer                  
+000190a0  _user_ram_00                           
+000190a1  _status_cml                            
+000190a4  _debug1                                
+000190a8  _debug2                                
+000190ac  _charge_state                          
+000190b0  _buck_hysteresis                       
+000190b4  _boost_hysteresis                      
+000190b8  _pulse_state                           
+000190bc  _backup_duty                           
+000190c0  _vbus_filtered                         
+000190c4  _vbus_backup_voltage                   
+000190c8  _vbus_norminal                         
+000190cc  _buck_duty                             
+000190d0  _buckboost_duty                        
+000190d4  _boost_duty                            
+000190d8  _ibat_adc_offset                       
+000190dc  _pmbus_dcdc_cal                        
+000190e8  _pmbus_dcdc_cal_nonpaged               
+000190ec  _filter0_pmbus_regs                    
+0001912c  _filter1_pmbus_regs                    
+0001916c  _pmbus_dcdc_config_nonpaged            
+00019198  _pmbus_dcdc_config_nonpaged_translated 
+000191c4  _pmbus_buffer                          
+000191ec  _pmbus_dcdc_config                     
+00019214  _pmbus_dcdc_config_translated          
+0001923c  ___end__                               
+0001923c  end                                    
+00019f24  _StackUSER_                            
+00019f94  _StackFIQ_                             
+00019fe8  _StackIRQ_                             
+00019fec  _StackABORT_                           
+00019ff0  _StackUND_                             
+00019ffc  _StackSUPER_                           
+00020000  _LoopMuxRegs                           
+00030000  _FaultMuxRegs                          
+00040000  _AdcRegs                               
+00050000  _Dpwm3Regs                             
+00060000  _Filter2Regs                           
+00070000  _Dpwm2Regs                             
+00080000  _FeCtrl2Regs                           
+00090000  _Filter1Regs                           
+000a0000  _Dpwm1Regs                             
+000b0000  _FeCtrl1Regs                           
+000c0000  _Filter0Regs                           
+000d0000  _Dpwm0Regs                             
+000e0000  _FeCtrl0Regs                           
+fff7ec00  _Uart0Regs                             
+fff7ed00  _Uart1Regs                             
+fff7f000  _MiscAnalogRegs                        
+fff7f600  _PMBusRegs                             
+fff7fa00  _GioRegs                               
+fff7fd00  _TimerRegs                             
+ffffa4dc  rom_main                               
+fffffd00  _MmcRegs                               
+fffffe00  _DecRegs                               
+ffffff20  _CimRegs                               
+ffffffd0  _SysRegs                               
+ffffffff  ___binit__                             
+ffffffff  ___c_args__                            
+ffffffff  ___cinit__                             
+ffffffff  ___pinit__                             
+ffffffff  binit                                  
+ffffffff  cinit                                  
+ffffffff  pinit                                  
+
+[284 symbols]
